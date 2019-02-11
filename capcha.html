@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+<meta charset="UTF-8">
+
+<style>
+    .form-control[type=text]:valid {
+        color: green
+    }
+
+    .form-control[type=text]:invalid {
+        color: red
+    }
+</style>
+
+<!--
+Реализовать проверку капчи на сервере через ajax.
+Необходимо отправить на сервер введенный пользователем текст,
+и если он совпадает с картинкой (на сервере просто првоеряем соответствие строке, тк картинка всегда одна),
+возвращаем status: true. Если ошибка - false.
+Выводить ткесты ошибок или подтвержения можно через alert.
+ -->
+
+<div class="container">
+
+    <form>
+        <div class="form-row">
+            <img src="https://neurohive.io/wp-content/uploads/2018/08/really-simple-captcha-e1533080407317.gif" alt="">
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <input type="text" class="form-control" pattern="[а-яА-Яa-zA-Z0-9_-]{4,12}" autofocus required
+                       title="Введите от 4 до 12 символов" placeholder="Введите текст на картинке">
+            </div>
+            <div class="col">
+                <input type="submit" class="btn btn-primary" value="Проверить">
+            </div>
+        </div>
+    </form>
+
+</div>
